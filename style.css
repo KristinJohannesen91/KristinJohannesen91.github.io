@@ -215,3 +215,22 @@ p {
         margin-left: 0;
     }
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+.skill-item:hover {
+    color: #0073e6;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from the h1 */
+}
+
+header h1 a:hover {
+    text-decoration: none; /* Optional: underline on hover */
+}
