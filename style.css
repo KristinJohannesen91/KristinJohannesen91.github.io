@@ -29,13 +29,16 @@ body::before {
 header {
     width: 100%;
     padding: 20px 0;
-    background: rgba(150, 150, 150, 0.3); /* Light semi-transparent background */
+    /*background: rgba(75, 100, 150, 0.3); /* Light semi-transparent background */
+    background: transparent;
     color: #333;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    backdrop-filter: blur(4px); /* Subtle blur for a frosted effect */
+    /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    box-shadow: none;
+    border-bottom: none;
+    backdrop-filter: blur(2px); /* Subtle blur for a frosted effect */
     z-index: 1000;
     transition: background 0.3s;
 }
@@ -82,7 +85,7 @@ nav a:hover {
 /* Main Content Styling */
 main {
     max-width: 900px;
-    padding: 120px 20px 40px;
+    padding: 40px 20px 40px;
     margin: 0 auto;
 }
 
@@ -121,7 +124,7 @@ p {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-align: center;
+    text-align: left;
     border-bottom: 2px solid rgba(0, 0, 0, 0.1);
     padding-bottom: 10px;
 }

@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 1 - Data Analysis Tool</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Adjust the path as needed -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- MathJax for mathematical notation -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
 </head>
 <body>
 
-    <!-- Header (optional: link back to portfolio main page) -->
+    <!-- Header linking back to the portfolio main page -->
     <header>
         <div class="header-container">
             <h1><a href="../index.html">KJ Focus</a></h1>
-
             <nav>
                 <a href="../index.html">Home</a>
                 <a href="../index.html#projects">Projects</a>
@@ -21,22 +30,84 @@
         </div>
     </header>
 
-    <!-- Project Content -->
+    <!-- Main Project Content -->
     <main>
         <section class="project-detail">
             <h2>Data Analysis Tool</h2>
             <p>This project was developed to analyze customer data and provide actionable insights. It includes functionalities for data cleaning, visualization, and reporting.</p>
 
-            <h3>Technologies Used</h3>
-            <ul>
-                <li>Python (Pandas, NumPy)</li>
-                <li>Data Visualization (Matplotlib, Seaborn)</li>
-                <li>Jupyter Notebook</li>
-            </ul>
+            <!-- Mathematical Notation Section -->
+            <h3>Mathematical Model</h3>
+            <p>This project uses linear regression to model customer spending patterns. The regression equation is:
+                $$ y = mx + b $$
+            </p>
+            <p>In matrix form, it is represented as:
+                $$ Y = X \\beta + \\epsilon $$
+            </p>
 
-            <h3>Project Highlights</h3>
-            <p>Describe specific features, challenges, and outcomes. You might also include images, charts, or links to code samples here.</p>
+            <!-- Data Visualization Section with Chart.js -->
+            <h3>Data Visualization</h3>
+            <canvas id="myChart" style="width:100%;max-width:600px;height:400px;"></canvas>
+            
+            <script>
+                // Data and configuration for Chart.js
+                const ctx = document.getElementById('myChart').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'line', // Defines the chart type as a line chart
+                    data: {
+                        labels: ['January', 'February', 'March', 'April'], // X-axis labels
+                        datasets: [{
+                            label: 'Sales Over Time',
+                            data: [10, 15, 13, 17], // Y-axis data points
+                            borderColor: 'rgba(75, 192, 192, 1)', // Line color
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)', // Fill color under the line
+                            borderWidth: 2,
+                            fill: true // Fills the area under the line
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'top'
+                            }
+                        },
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Months'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Sales'
+                                },
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
 
+            <!-- Code Snippet Section -->
+            <h3>Sample Code</h3>
+            <pre><code class="language-python">
+# Import necessary libraries
+import pandas as pd
+import numpy as np
+
+# Load data
+df = pd.read_csv('customer_data.csv')
+
+# Perform a basic data analysis
+average_spend = df['spend'].mean()
+print("Average Customer Spend:", average_spend)
+            </code></pre>
+
+            <!-- Links to Live Demo and GitHub -->
             <h3>Live Demo & Code</h3>
             <p>
                 <a href="https://project-link-1.com" target="_blank">View Live Demo</a> |
